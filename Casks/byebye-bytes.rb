@@ -1,6 +1,6 @@
 cask "byebye-bytes" do
-  version "1.0.0"
-  sha256 "dbd8d01b9f969bc71f1fdd593f1a0b9a19fd9a96d1a17a405753540b68920790"
+  version "1.0.1"
+  sha256 "6aa6f1b061e51ab77fdbc2af0d8ce3a593bbabfa3c6587ab48a0085a42746b19"
 
   url "https://github.com/saiftheboss7/ByeBye-Bytes/releases/download/v#{version}/ByeBye-Bytes-#{version}.zip"
   name "ByeBye Bytes"
