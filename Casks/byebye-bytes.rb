@@ -2,8 +2,7 @@ cask "byebye-bytes" do
   version "1.0.0"
   sha256 "dbd8d01b9f969bc71f1fdd593f1a0b9a19fd9a96d1a17a405753540b68920790"
 
-  url "https://github.com/saiftheboss7/ByeBye-Bytes/releases/download/v#{version}/ByeBye-Bytes-#{version}.zip",
-      verified: "github.com/saiftheboss7/ByeBye-Bytes/"
+  url "https://github.com/saiftheboss7/ByeBye-Bytes/releases/download/v#{version}/ByeBye-Bytes-#{version}.zip"
   name "ByeBye Bytes"
   desc "Drag-and-drop video compressor using Apple Silicon hardware HEVC"
   homepage "https://github.com/saiftheboss7/ByeBye-Bytes"
