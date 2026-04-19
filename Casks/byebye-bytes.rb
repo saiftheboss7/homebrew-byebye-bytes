@@ -24,9 +24,14 @@ cask "byebye-bytes" do
   ]
 
   caveats <<~EOS
-    ByeBye Bytes is ad-hoc signed (not Developer ID notarised).
-    On first launch macOS Gatekeeper will warn — right-click the app
-    in Finder and choose "Open" once to allow it, or approve it under
-    System Settings → Privacy & Security.
+    ByeBye Bytes is ad-hoc signed (not Developer ID notarised), so
+    macOS Gatekeeper will block the first launch. Clear the quarantine
+    attribute with:
+
+      xattr -dr com.apple.quarantine "/Applications/ByeBye Bytes.app"
+
+    Or install the cask with --no-quarantine next time:
+
+      brew install --cask --no-quarantine saiftheboss7/byebye-bytes/byebye-bytes
   EOS
 end

@@ -5,14 +5,14 @@ Homebrew tap for [ByeBye Bytes](https://github.com/saiftheboss7/ByeBye-Bytes) �
 ## Install
 
 ```bash
-brew tap saiftheboss7/byebye-bytes
-brew install --cask byebye-bytes
+brew install --cask saiftheboss7/byebye-bytes/byebye-bytes
+xattr -dr com.apple.quarantine "/Applications/ByeBye Bytes.app"
 ```
 
-Or in one shot:
+The second line clears macOS's quarantine attribute so Gatekeeper doesn't block the ad-hoc-signed app on first launch. Alternatively, pass `--no-quarantine` to skip it at install time:
 
 ```bash
-brew install --cask saiftheboss7/byebye-bytes/byebye-bytes
+brew install --cask --no-quarantine saiftheboss7/byebye-bytes/byebye-bytes
 ```
 
 ## Upgrade
@@ -20,6 +20,7 @@ brew install --cask saiftheboss7/byebye-bytes/byebye-bytes
 ```bash
 brew update
 brew upgrade --cask byebye-bytes
+xattr -dr com.apple.quarantine "/Applications/ByeBye Bytes.app"
 ```
 
 ## Uninstall
@@ -30,9 +31,9 @@ brew uninstall --cask byebye-bytes
 brew uninstall --zap --cask byebye-bytes
 ```
 
-## First launch
+## Why the `xattr` step?
 
-The `.app` ships ad-hoc signed (not Developer ID notarised), so macOS Gatekeeper will warn on first launch. Right-click the app in Finder → **Open** once to allow it, or approve it under **System Settings → Privacy & Security**.
+The `.app` is ad-hoc signed, not Developer ID notarised. Homebrew flags downloads as quarantined by default; the command above removes that attribute so the app launches cleanly. If you'd rather trust Gatekeeper's prompt, skip the `xattr` line and right-click → **Open** once in Finder instead.
 
 ## License
 
